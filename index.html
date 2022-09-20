@@ -96,13 +96,19 @@
       const terminalkey = document.forms.TinkoffPayForm.terminalkey;
 
       // Одна вставка
-      // widgetParameters.paymentSystems.TinkoffFps = {
-      //   paymentInfo: function () {
-      //     return {
-      //       paymentData: document.forms.TinkoffPayForm
-      //     }
-      //   }
-      // }
+      // const widgetParameters = {
+      //   container: "tinkoffWidgetContainer",
+      //   terminalKey: terminalkey.value,
+      //   paymentSystems: {
+      //     TinkoffFps: {
+      //       paymentInfo: function () {
+      //         return {
+      //           paymentData: document.forms.TinkoffPayForm,
+      //         };
+      //       },
+      //     },
+      //   },
+      // };
 
       // Множественная втсавка кнопок
       const widgetParameters = {
