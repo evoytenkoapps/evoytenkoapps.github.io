@@ -96,45 +96,45 @@
       const terminalkey = document.forms.TinkoffPayForm.terminalkey;
 
       // Одна вставка
+      const widgetParameters = {
+        container: "tinkoffWidgetContainer",
+        terminalKey: terminalkey.value,
+        paymentSystems: {
+          TinkoffFps: {
+            paymentInfo: function () {
+              return {
+                paymentData: document.forms.TinkoffPayForm,
+              };
+            },
+          },
+        },
+      };
+
+      // // Множественная втсавка кнопок
       // const widgetParameters = {
-      //   container: "tinkoffWidgetContainer",
       //   terminalKey: terminalkey.value,
-      //   paymentSystems: {
-      //     TinkoffFps: {
+      //   paymentItems: [
+      //     {
+      //       container: document.getElementById("tinkoffWidgetContainer1"),
       //       paymentInfo: function () {
       //         return {
       //           paymentData: document.forms.TinkoffPayForm,
       //         };
       //       },
       //     },
+      //     {
+      //       container: document.getElementById("tinkoffWidgetContainer2"),
+      //       paymentInfo: function () {
+      //         return {
+      //           paymentData: document.forms.TinkoffPayForm,
+      //         };
+      //       },
+      //     },
+      //   ],
+      //   paymentSystems: {
+      //     TinkoffFps: {},
       //   },
       // };
-
-      // Множественная втсавка кнопок
-      const widgetParameters = {
-        terminalKey: terminalkey.value,
-        paymentItems: [
-          {
-            container: document.getElementById("tinkoffWidgetContainer1"),
-            paymentInfo: function () {
-              return {
-                paymentData: document.forms.TinkoffPayForm,
-              };
-            },
-          },
-          {
-            container: document.getElementById("tinkoffWidgetContainer2"),
-            paymentInfo: function () {
-              return {
-                paymentData: document.forms.TinkoffPayForm,
-              };
-            },
-          },
-        ],
-        paymentSystems: {
-          TinkoffFps: {},
-        },
-      };
 
       window.addEventListener("load", function () {
         initPayments(widgetParameters);
