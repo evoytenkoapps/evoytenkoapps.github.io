@@ -111,7 +111,6 @@
             container: document.getElementById("tinkoffWidgetContainer1"),
             paymentInfo: function () {
               return {
-                infoEmail: "E-mail для отправки информации о платеже",
                 paymentData: document.forms.TinkoffPayForm,
               };
             },
@@ -120,21 +119,13 @@
             container: document.getElementById("tinkoffWidgetContainer2"),
             paymentInfo: function () {
               return {
-                infoEmail: "E-mail для отправки информации о платеже",
                 paymentData: document.forms.TinkoffPayForm,
               };
             },
           },
         ],
         paymentSystems: {
-          TinkoffFps: {
-            paymentInfo: function () {
-              return {
-                infoEmail: infoEmail.value,
-                paymentData: document.forms.TinkoffPayForm,
-              };
-            },
-          },
+          TinkoffFps: {},
         },
       };
 
