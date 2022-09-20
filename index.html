@@ -32,15 +32,24 @@
     <script src="https://rest-api-test.tinkoff.ru/html/payForm/js/tinkoff.js"></script>
 
     <form name="TinkoffPayForm" onsubmit="pay(this); return false;">
-      <input class="tinkoffPayRow" type="hidden" name="terminalkey"
-      value="EatFit3DS >
+      <input
+        class="tinkoffPayRow"
+        type="hidden"
+        name="terminalkey"
+        value="EatFit3DS"
+      />
 
       <input class="tinkoffPayRow" type="hidden" name="frame" value="true" />
 
       <input class="tinkoffPayRow" type="hidden" name="language" value="ru" />
 
-      <input class="tinkoffPayRow" type="text" placeholder="Сумма заказа"
-      name="amount required>
+      <input
+        class="tinkoffPayRow"
+        type="text"
+        placeholder="Сумма заказа"
+        name="amount"
+        required
+      />
 
       <input
         class="tinkoffPayRow"
@@ -70,8 +79,12 @@
         name="email"
       />
 
-      <input class="tinkoffPayRow" type="text" placeholder="Контактный телефон
-      name="phone">
+      <input
+        class="tinkoffPayRow"
+        type="text"
+        placeholder="Контактный телефон"
+        name="phone"
+      />
 
       <input class="tinkoffPayRow" type="submit" value="Оплатить" />
     </form>
