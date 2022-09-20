@@ -75,5 +75,31 @@
 
       <input class="tinkoffPayRow" type="submit" value="Оплатить" />
     </form>
+
+    <script type="text/javascript">
+      const terminalkey = document.forms.TinkoffPayForm.terminalkey;
+
+      const widgetParameters = {
+        container: "tinkoffWidgetContainer",
+
+        terminalKey: terminalkey.value,
+
+        paymentSystems: {
+          TinkoffPay: {
+            paymentInfo: function () {
+              return {
+                infoEmail: "E-mail для отправки информации о платеже",
+
+                paymentData: document.forms.TinkoffPayForm,
+              };
+            },
+          },
+        },
+      };
+
+      window.addEventListener("load", function () {
+        initPayments(widgetParameters);
+      });
+    </script>
   </body>
 </html>
