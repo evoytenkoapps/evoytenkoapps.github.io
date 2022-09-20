@@ -89,6 +89,9 @@
       <input class="tinkoffPayRow" type="submit" value="Оплатить" />
     </form>
 
+    <div id="tinkoffWidgetContainer1"></div>
+    <div id="tinkoffWidgetContainer2"></div>
+
     <script type="text/javascript">
       const terminalkey = document.forms.TinkoffPayForm.terminalkey;
 
@@ -128,11 +131,9 @@
       };
 
       window.addEventListener("load", function () {
-        console.log("loaded");
+        console.log("widgetParametersMany", widgetParametersMany);
         initPayments(widgetParametersMany);
       });
     </script>
-    <div id="tinkoffWidgetContainer1"></div>
-    <div id="tinkoffWidgetContainer2"></div>
   </body>
 </html>
