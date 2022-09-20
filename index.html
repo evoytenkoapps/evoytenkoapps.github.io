@@ -94,40 +94,49 @@
     <script type="text/javascript">
       const terminalkey = document.forms.TinkoffPayForm.terminalkey;
 
+      // Одна вставка
+      widgetParameters.paymentSystems.TinkoffFps = {
+        paymentInfo: function () {
+          return {
+            paymentData: document.forms.TinkoffPayForm
+          }
+        }
+      }
+
       // Множественная втсавка кнопок
-      const widgetParameters = {
-        terminalKey: terminalkey.value,
-        paymentItems: [
-          {
-            container: document.getElementById("tinkoffWidgetContainer1"),
-            paymentInfo: function () {
-              return {
-                infoEmail: "E-mail для отправки информации о платеже",
-                paymentData: document.forms.TinkoffPayForm,
-              };
-            },
-          },
-          {
-            container: document.getElementById("tinkoffWidgetContainer2"),
-            paymentInfo: function () {
-              return {
-                infoEmail: "E-mail для отправки информации о платеже",
-                paymentData: document.forms.TinkoffPayForm,
-              };
-            },
-          },
-        ],
-        paymentSystems: {
-          TinkoffFps: {
-            paymentInfo: function () {
-              return {
-                infoEmail: infoEmail.value,
-                paymentData: document.forms.TinkoffPayForm,
-              };
-            },
-          },
-        },
-      };
+      // const widgetParameters = {
+      //   terminalKey: terminalkey.value,
+      //   paymentItems: [
+      //     {
+      //       container: document.getElementById("tinkoffWidgetContainer1"),
+      //       paymentInfo: function () {
+      //         return {
+      //           infoEmail: "E-mail для отправки информации о платеже",
+      //           paymentData: document.forms.TinkoffPayForm,
+      //         };
+      //       },
+      //     },
+      //     {
+      //       container: document.getElementById("tinkoffWidgetContainer2"),
+      //       paymentInfo: function () {
+      //         return {
+      //           infoEmail: "E-mail для отправки информации о платеже",
+      //           paymentData: document.forms.TinkoffPayForm,
+      //         };
+      //       },
+      //     },
+      //   ],
+      //   paymentSystems: {
+      //     TinkoffFps: {
+      //       paymentInfo: function () {
+      //         return {
+      //           infoEmail: infoEmail.value,
+      //           paymentData: document.forms.TinkoffPayForm,
+      //         };
+      //       },
+      //     },
+      //   },
+      // };
 
       window.addEventListener("load", function () {
         initPayments(widgetParameters);
