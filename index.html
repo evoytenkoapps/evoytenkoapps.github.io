@@ -102,7 +102,7 @@
       const terminalkey = document.forms.TinkoffPayForm.terminalkey;
 
       // Множественная втсавка кнопок
-      const widgetParametersMany = {
+      const widgetParameters = {
         terminalKey: terminalkey.value,
         paymentItems: [
           {
@@ -137,8 +137,7 @@
       };
 
       window.addEventListener("load", function () {
-        console.log("widgetParametersMany", widgetParametersMany);
-        initPayments(widgetParametersMany);
+        initPayments(widgetParameters);
       });
     </script>
   </body>
