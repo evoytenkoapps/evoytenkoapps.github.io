@@ -79,17 +79,34 @@
     <script type="text/javascript">
       const terminalkey = document.forms.TinkoffPayForm.terminalkey;
 
-      const widgetParameters = {
-        container: "tinkoffWidgetContainer",
-
-        terminalKey: terminalkey.value,
-
-        paymentSystems: {
-          TinkoffPay: {
+      // Множественная втсавка кнопок
+      const widgetParametersMany = {
+        terminalKey: terminalKey.value,
+        paymentItems: [
+          {
+            container: document.getElementById("tinkoffWidgetContainer1"),
             paymentInfo: function () {
               return {
                 infoEmail: "E-mail для отправки информации о платеже",
-
+                paymentData: document.forms.TinkoffPayForm,
+              };
+            },
+          },
+          {
+            container: document.getElementById("tinkoffWidgetContainer2"),
+            paymentInfo: function () {
+              return {
+                infoEmail: "E-mail для отправки информации о платеже",
+                paymentData: document.forms.TinkoffPayForm,
+              };
+            },
+          },
+        ],
+        paymentSystems: {
+          TinkoffFps: {
+            paymentInfo: function () {
+              return {
+                infoEmail: infoEmail.value,
                 paymentData: document.forms.TinkoffPayForm,
               };
             },
@@ -98,7 +115,8 @@
       };
 
       window.addEventListener("load", function () {
-        initPayments(widgetParameters);
+        console.log("loaded")
+        initPayments(widgetParametersMany);
       });
     </script>
   </body>
