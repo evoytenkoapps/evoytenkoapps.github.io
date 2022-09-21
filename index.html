@@ -110,32 +110,6 @@
         },
       };
 
-      // // Множественная втсавка кнопок
-      // const widgetParameters = {
-      //   terminalKey: terminalkey.value,
-      //   paymentItems: [
-      //     {
-      //       container: document.getElementById("tinkoffWidgetContainer1"),
-      //       paymentInfo: function () {
-      //         return {
-      //           paymentData: document.forms.TinkoffPayForm,
-      //         };
-      //       },
-      //     },
-      //     {
-      //       container: document.getElementById("tinkoffWidgetContainer2"),
-      //       paymentInfo: function () {
-      //         return {
-      //           paymentData: document.forms.TinkoffPayForm,
-      //         };
-      //       },
-      //     },
-      //   ],
-      //   paymentSystems: {
-      //     TinkoffFps: {},
-      //   },
-      // };
-
       window.addEventListener("load", function () {
         initPayments(widgetParameters);
       });
